@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #e66465, #9198e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: red;
+        }
+
+        .small-text {
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hola desde WebAssembly</h1>
+        <h3>Instrucciones:</h3>
+        <h3 class="small-text">1.- Haz clic derecho</h3>
+        <h3 class="small-text">2.- Selecciona la opción "inspeccionar"</h3>
+        <h3 class="small-text">3.- Selecciona la opción "console"</h3>
+        <p class="small-text">Nota: Debajo de la opción "Show console sidebar" y "clear console - Ctrl + L", aparece el resultado de la función del "functions.c". Además, en la línea 51 del "index.html" se podrá cambiar el valor de las variables de la función</p>
+        <script>
+            setTimeout(() => {
+                console.log(wasmExports.add(25, 10));
+            }, 3000);
+        </script>
+    </div>
+</body>
+</html>
